@@ -2,17 +2,19 @@ journalistes=["@jcunniet","@PaulLampon","@Aziliz31","@ssoumier","@marionsouzeau"
 
 puts "Il y a #{journalistes.length} journalistes dans cet array."
 puts "Il y a #{journalistes.grep(/[0-9]/).length} handles qui contiennent un n°."
-
+#puts "#{journalistes.grep(/["Aude"]/).length} handles contiennent les 4 lettres du prénom 'Aude' à la suite (sans faire attention à la casse HA HA )"
 j = 0
-
-puts "#{journalistes.grep(/Aude/i).length} handles contiennent les 4 lettres du prénom 'Aude' à la suite (sans faire attention à la casse)."
-
-puts  "#{journalistes.grep(/@[A-Z]/).length} commencent par une majuscule. "
-
-puts  "#{journalistes.grep(/[A-Z]/).length} contiennent une majuscule."
-
-i = 0
-while
-    journalistes.grep[i](/['_']/).length
-    puts "Il y a #{journalistes.grep[i](/['_']/).length} _ dans tous les pseudos confondus"
+journalistes.each do |string|
+case string
+when /Aude/ then j += 1
+ end
 end
+#
+puts j.to_s + " handle(s) contien(nen)t les 4 lettres du prénom 'Aude' à la suite (sans faire attention à la casse HA HA )"
+
+#journalistes.each do |twitt|
+  puts "#{journalistes[0][1].scan(/[^@A-Z]/).length} commencent par une majuscule. "
+#end
+
+#journalistes.each do |twiit|
+#  i = 2
