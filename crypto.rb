@@ -10,7 +10,7 @@ end
 
 
 my_hash = Hash[array1.zip(array3)]
-puts my_hash.length
+#puts my_hash.length
 
 puts ""
 puts "la crypto qui a la plus grosse valeur est #{my_hash.select {|k,v| v == my_hash.values.max }}"
@@ -37,21 +37,26 @@ my_hash.values.each  do |i|
 #  puts my_hash.keys + "  " + my_hash.values.to_s
   if ((i <=> 6000) == -1)
 #    puts my_hash.values.to_s
-    array4 << my_hash.values
-    array5 << my_hash.keys
+    array4 << i
+    array5 << i
   end
 end
+
 
 puts ""
 puts "Voici les crypto dont la valeur est inférieure à 6000: "
 
-puts array4.length
 
 
-my_hash2 = Hash[array5.zip(array4)]
 
+my_hash2 = Hash[array4.zip(array5)]
 
-#puts my_hash2
+puts my_hash2
 
+print "il y en a : "
+print  my_hash2.length
+print " sur "
+print my_hash.length
+#puts my_hash2.keys + "   kjkj "  + my_hash2.values.to_s
 puts ""
 puts "sur cette liste, la crypto qui a la plus grosse valeur est #{my_hash2.select {|k,v| v == my_hash2.values.max }}"
